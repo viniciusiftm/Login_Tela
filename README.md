@@ -1,2 +1,2 @@
 # Login_Tela
-Sistema de Cadastro e Login de usuários.
+Sistema de Cadastro/Login de usuários. Usando Php no BackEnd e BootStrap no FrontEnd
