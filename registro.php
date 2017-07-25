@@ -106,7 +106,7 @@
 
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">CEP:    </span>
-            <input type="text" class="form-control" name="cep" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000" aria-describedby="basic-addon1" required>
+            <input type="text" class="form-control" name="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000" aria-describedby="basic-addon1" required>
           </div> <br />
 
           <div class="input-group">
