@@ -58,7 +58,7 @@
  			<div class="col-xs-6 col-sm-4">
  			</div>
 
- 			<div class="col-xs-6 col-sm-4" style="margin-top: 13%;">
+ 			<div class="col-xs-6 col-sm-4" style="margin-top: 0%;">
  				<form action="registrar_function.php" method="POST">
  					<div class="input-group">
 					  <span class="input-group-addon" id="basic-addon1">Nome: </span>
@@ -66,9 +66,26 @@
 					</div><br />
 
 					<div class="input-group">
-					  <span class="input-group-addon" id="basic-addon1">Cidade: </span>
-					  <input type="text" class="form-control" name="cidade" placeholder="Cidade" aria-describedby="basic-addon1" required>
-					</div> <br />
+            <span class="input-group-addon" id="basic-addon1">CEP:    </span>
+            <input type="text" class="form-control" name="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000" aria-describedby="basic-addon1" required>
+          </div> <br />
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Endereço: </span>
+            <input type="text" class="form-control" name="endereco" placeholder="Informe seu Endereço" aria-describedby="basic-addon1" required>
+          </div><br />
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Bairro: </span>
+            <input type="text" class="form-control" name="bairro" placeholder="Informe seu Bairro" aria-describedby="basic-addon1" required>
+          </div><br />
+
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Telefone: </span>
+            <input type="text" class="form-control" name="telefone" placeholder="Informe seu Telefone " aria-describedby="basic-addon1" required>
+          </div><br />
+
+          
 
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Estado: </span>
@@ -104,9 +121,10 @@
               </select>
           </div> <br />
 
+          
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">CEP:    </span>
-            <input type="text" class="form-control" name="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000" aria-describedby="basic-addon1" required>
+            <span class="input-group-addon" id="basic-addon1">Cidade: </span>
+            <input type="text" class="form-control" name="cidade" placeholder="Cidade" aria-describedby="basic-addon1" required>
           </div> <br />
 
           <div class="input-group">
@@ -115,8 +133,8 @@
           </div> <br />
 
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Login:    </span>
-            <input type="text" class="form-control" name="login"  placeholder="Login" aria-describedby="basic-addon1" required>
+            <span class="input-group-addon" id="basic-addon1">Usuário:    </span>
+            <input type="text" class="form-control" name="usuario"  placeholder="Informe o Usuário" aria-describedby="basic-addon1" required>
           </div> <br />
 
           <div class="input-group">
@@ -148,3 +166,9 @@
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
+
+
+
+
+
+
