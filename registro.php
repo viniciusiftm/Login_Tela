@@ -9,45 +9,8 @@
     <link rel="stylesheet" type="text/css" href="estilo.css">
   </head>
   <body>  
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="registro.php">Registrar</a></li>
-        
-      </ul>
-     
-      <ul class="nav navbar-nav navbar-right">
-       
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-
-
+   <!--  NavBar -->
+  <?php  require_once('view/NavBar.php'); ?>
 
 
 
@@ -59,37 +22,47 @@
  			</div>
 
  			<div class="col-xs-6 col-sm-4" style="margin-top: 0%;">
- 				<form action="registrar_function.php" method="POST">
+ 				<form action="controller/registrar_function.php" method="POST">
  					<div class="input-group">
-					  <span class="input-group-addon" id="basic-addon1">Nome: </span>
+					  <span class="input-group-addon" id="basic-addon1">Nome:       </span>
 					  <input type="text" class="form-control" name="nome" placeholder="Nome Completo" aria-describedby="basic-addon1" required>
 					</div><br />
 
+          
 					<div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">CEP:    </span>
-            <input type="text" class="form-control" name="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000" aria-describedby="basic-addon1" required>
+            <span class="input-group-addon" id="basic-addon1">CEP:        &nbsp</span>
+            <input type="text" class="form-control" name="cep" pattern="\d{5}-?\d{3}" placeholder="00000-000" oninvalid="setCustomValidity('Seu CEP deve conter os seguintes formatos: 00000-000 ou 00000000')" Onkeyup="try{setCustomValidity('')}catch(e){}" maxlength="9" aria-describedby="basic-addon1" required>
           </div> <br />
 
           <div class="input-group">
             <span class="input-group-addon" id="basic-addon1">Endereço: </span>
-            <input type="text" class="form-control" name="endereco" placeholder="Informe seu Endereço" aria-describedby="basic-addon1" required>
+            <input type="text" class="form-control" name="endereco" placeholder="Informe seu Endereço" maxlength="30" aria-describedby="basic-addon1" required>
           </div><br />
 
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Bairro: </span>
-            <input type="text" class="form-control" name="bairro" placeholder="Informe seu Bairro" aria-describedby="basic-addon1" required>
+            <span class="input-group-addon" id="basic-addon1">Bairro:       </span>
+            <input type="text" class="form-control" name="bairro" placeholder="Informe seu Bairro" maxlength="30" aria-describedby="basic-addon1" required>
           </div><br />
 
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Telefone: </span>
-            <input type="text" class="form-control" name="telefone" placeholder="Informe seu Telefone " aria-describedby="basic-addon1" required>
+            <span class="input-group-addon" id="basic-addon1">Telefone:   </span>
+            <input type="text" class="form-control" name="telefone" pattern="[0]?[1-9]{2}[9]?[0-9]{4}-?[0-9]{4}" placeholder="(11)91111-1111"aria-describedby="basic-addon1" required="required">
           </div><br />
-
           
+          <div class="input-group">
+            <span class="input-group-addon" id="basic-addon1">Funcao:     </span>
+              <select name="funcao" class="form-control" aria-describedby="basic-addon1" required>
+                <option value="" selected>Selecione</option>
+                <option value="funcionario">Funcionario</option>
+                <option value="cliente">Cliente</option>
+                <option value="fornecedores">fornecedores</option>
+              </select>
+          </div><br />
+
 
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Estado: </span>
-              <select name="estados-brasil" class="form-control" name="estado" placeholder="Estado" aria-describedby="basic-addon1" required>
+            <span class="input-group-addon" id="basic-addon1">Estado:     </span>
+              <select name="estados-brasil" class="form-control" name="estado" aria-describedby="basic-addon1" required>
                 <option value="" selected>Selecione</option>
                 <option value="AC">Acre</option>
                 <option value="AL">Alagoas</option>
@@ -123,22 +96,22 @@
 
           
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Cidade: </span>
+            <span class="input-group-addon" id="basic-addon1">Cidade:    &nbsp</span>
             <input type="text" class="form-control" name="cidade" placeholder="Cidade" aria-describedby="basic-addon1" required>
           </div> <br />
 
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">E-mail:  </span>
+            <span class="input-group-addon" id="basic-addon1">E-mail:    &nbsp&nbsp</span>
             <input type="email" class="form-control" name="email"  placeholder="email@domain.com" aria-describedby="basic-addon1" required>
           </div> <br />
 
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Usuário:    </span>
+            <span class="input-group-addon" id="basic-addon1">Usuário:  &nbsp&nbsp</span>
             <input type="text" class="form-control" name="usuario"  placeholder="Informe o Usuário" aria-describedby="basic-addon1" required>
           </div> <br />
 
           <div class="input-group">
-            <span class="input-group-addon" id="basic-addon1">Senha:    </span>
+            <span class="input-group-addon" id="basic-addon1">Senha:    &nbsp&nbsp</span>
             <input type="password" class="form-control" name="senha"  placeholder="********" aria-describedby="basic-addon1" required>
           </div> <br />
 
@@ -162,7 +135,6 @@
 
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>

@@ -9,48 +9,8 @@
     <link rel="stylesheet" type="text/css" href="estilo.css">
   </head>
   <body>
-  
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="index.php">Home <span class="sr-only">(current)</span></a></li>
-        <li class="active"><a href="login.php">Login</a></li>
-        
-      </ul>
-     
-      <ul class="nav navbar-nav navbar-right">
-       
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
-
-
-
-
-
-
+    <!--  NavBar -->
+  <?php require_once('view/NavBar.php'); ?>
 
 	
 	<div class="container">
@@ -59,15 +19,15 @@
  			<div class="col-xs-6 col-sm-4">
  			</div>
 
- 			<div class="col-xs-6 col-sm-4" style="margin-top: 10%;">
- 				<form class="jumbotron" action="login_function.php" method="POST" >
+ 			<div class="col-sm-6 col-xs-6" style="margin-top: 10%;">
+ 				<form class="jumbotron" action="controller/login_function.php" method="POST" >
  				  <div class="form-group">
       <label for="disabledTextInput">Usuário</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="Informe o Usuário">
+      <input type="text" name='login' id="disabledTextInput" pattern="[a-zA-ZÀÈÌÒÙàèìòùÁÉÍÓÚáéíóú1-9@_\-\.]" autofocus class="form-control" placeholder="Informe o Usuário" required="required">
     </div>
     <div class="form-group">
       <label for="disabledSelect">Senha</label>
-      <input type="text" id="disabledTextInput" class="form-control" placeholder="Informe a Senha">
+      <input type="password" name='senha' id="disabledTextInput" pattern="[a-zA-ZÀÈÌÒÙàèìòùÁÉÍÓÚáéíóú1-9@_\-\.]" class="form-control" placeholder="Informe a Senha" required="required">
         
       </select>
     </div>
